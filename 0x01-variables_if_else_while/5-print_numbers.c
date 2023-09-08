@@ -2,23 +2,15 @@
 
 
 /**
- * main - program that prints the alphabet in lowercase and upper case
- *
- * Return: Always 0.
+ * main - program that prints the Numbers from 0 to 9 *
+ *  Return: Always 0.
  */
-
 int main(void)
 {
-	char letter;
+	int Number;
 
-	for (letter = 'a'; letter <= 'z'; letter++)
-
-	{
-	if (letter != 'e' && letter != 'q')
-	putchar(letter);
-	}
-
+	for (Number = '0'; Number <= '9'; Number++)
+	putchar(Number);
 	putchar('\n');
-
 	return (0);
 }
