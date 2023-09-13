@@ -1,52 +1,29 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
-int sum(int n);
-int fib(int n);
-
-const int N = 4000000;
-
-int main(void);
+/**
+ * main - Prints the add of the even-valued
+ * fibonacci numbers.
+ *
+ * Return: Always 0.
+ */
+int main(void)
 {
-int i = 2;
+	long int n1, n2, fn, afn;
 
-	cout << sum(i);
-
+	n1 = 1;
+	n2 = 2;
+	fn = afn = 0;
+	while (fn <= 4000000)
+	{
+		fn = n1 + n2;
+		n1 = n2;
+		n2 = fn;
+		if ((n1 % 2) == 0)
+		{
+			afn += n1;
+		}
+	}
+	printf("%ld\n", afn);
 	return (0);
 }
 
-int sum(int n);
-{
-	int sum = 0;
-
-	while (fib(n) < N)
-	{
-		if (fib(n) % 2 == 0)
-		{
-
-			sum += fib(n);
-		}
-
-		n++;
-	}
-	return (sum);
-}
-
-int fib(int n);
-{
-
-	int a = 0;
-	int b = 1;
-	int c = 0;
-	int i = 1;
-	while (i <= n)
-	{
-		c = a + b;
-		a = b;
-		b = c;
-
-		i++;
-	}
-
-	return (c);
-}
