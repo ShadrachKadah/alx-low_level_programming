@@ -12,9 +12,6 @@ int main(void)
 
 
 {
-	int fib1_half2 = 0;
-	int fib2_half1 = 0;
-	int fib2_half2 = 0;
 	int count;
 	unsigned long fib1 = 0, fib2 = 1, sum;
 	unsigned long fib1_half1, fib2_half1, fib2_half2;
