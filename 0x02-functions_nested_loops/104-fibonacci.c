@@ -1,45 +1,52 @@
 #include <stdio.h>
-/**
- * print_fib - prints the first 50 Fibonacci numbers,
- * starting with 1 and 2, followed by a new line.
- * @len: the length of with the fib sequance should print to.
- *
- * Return: void
- */
-void print_fib(int len)
-{
-	unsigned int target, i;
-	unsigned int former_l, former_r;
-	unsigned int latter_l, latter_r;
-	unsigned int fib_l, fib_r;
-
-	f = 1;
-	l = 2;
-	target = len - 2;
-	for (i = 0 ; i < target ; i++)
-	{
-		fib = f + l;
-		printf("%d : ", i + 4);
-		printf("%.0Lf", fib);
-		f = l;
-		l = fib;
-		if (i < target - 1)
-			printf("\n");
-	}
-	putchar('\n');
-}
 
 
 /**
- * main - Entry point,
- *
- *
- * Return: Always 0 (sucess)
+ * main - Entry point for the Fibonacci program.
+ * finds and prints the first 98 Fibonacci numbers, starting with 1 and 2,
+ * Return: 0.
  */
+
+
 int main(void)
+
+
 {
-	print_fib(98);
+	int count;
+	unsigned long fib1 = 0, fib2 = 1, sum;
+	unsigned long fib1_half1, fib2_half1, fib2_half2;
+	unsigned long half1, half2;
+
+
+	for (count = 0; count < 92; count++)
+	{
+	sum = fib1 + fib2;
+	printf("%lu, ", sum);
+	fib1 = fib2;
+	fib2 = sum;
+	}
+	fib1_half1 = fib1 / 10000000000;
+	fib2_half1 = fib2 / 10000000000;
+	fib1_half2 = fib1 % 10000000000;
+	fib2_half2 = fib2 % 10000000000;
+	for (count = 93; count < 99; count++)
+	{
+	half1 = fib1_half1 + fib2_half1;
+	half2 = fib1_half2 + fib2_half2;
+	if (fib1_half2 + fib2_half2 > 9999999999)
+	{
+	half1 += 1;
+	half2 %= 10000000000;
+	}
+	printf("%lu%lu", half1, half2);
+	if (count != 98)
+	printf(", ");
+	fib1_half1 = fib2_half1;
+	fib1_half2 = fib2_half2;
+	fib2_half1 = half1;
+	fib2_half2 = half2;
+	}
+	printf("\n");
 	return (0);
 }
-
 
