@@ -8,7 +8,9 @@
  *
  * Return: Always 0.
  */
+
 int main(void)
+
 {
 	list_t *head;
 	list_t *new;
