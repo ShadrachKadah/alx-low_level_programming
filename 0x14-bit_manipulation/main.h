@@ -2,7 +2,7 @@
 #define _MAIN_H_
 
 int _putchar(char c);
-unsigned int binary_to_uint(const char *x);
+unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int m);
 int get_bit(unsigned long int q, unsigned int index);
 int set_bit(unsigned long int *y, unsigned int index);
